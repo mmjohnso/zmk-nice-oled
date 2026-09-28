@@ -59,6 +59,7 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_OLED_WIDGET_STATUS)
         zephyr_library_sources(widgets/wpm.c)
         target_sources_ifdef(CONFIG_NICE_OLED_WIDGET_WPM_LUNA app PRIVATE widgets/luna.c)
         target_sources_ifdef(CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT app PRIVATE widgets/bongo_cat.c)
+        target_sources_ifdef(CONFIG_NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE app PRIVATE assets/adobe.c)
       endif()
 
       if(CONFIG_NICE_OLED_WIDGET_CONNECTION_STATUS)

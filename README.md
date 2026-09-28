@@ -242,6 +242,7 @@ This document lists the available configuration options for the `nice_oled` shie
 | `CONFIG_NICE_OLED_WIDGET_WPM_LUNA_ANIMATION_MS` | int | `300` | Luna Animation in ms for WPM Widget |
 | `CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT` | bool | `n` | Enable wpm bongo cat |
 | `CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT_ANIMATION_MS` | int | `300` | Bongo Cat Animation in ms for WPM Widget |
+| `CONFIG_NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE` | bool | `n` | Replace central WPM artwork with the Adobe logo |
 | `CONFIG_NICE_OLED_WIDGET_RESPONSIVE` | bool | `n` | Enable widget responsive (overrides stack to `4096`, priority to `3`) |
 | `CONFIG_NICE_OLED_WIDGET_RESPONSIVE_BONGO_CAT` | bool | `n` | Enable widget responsive bongo cat |
 

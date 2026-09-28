@@ -233,6 +233,11 @@ static struct zmk_widget_luna luna_widget;
 static struct zmk_widget_wpm_bongo_cat wpm_bongo_cat_widget;
 #endif
 
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE)
+LV_IMG_DECLARE(adobe);
+static lv_obj_t *adobe_widget;
+#endif
+
 /**
  * responsive bongo cat
  **/
@@ -1131,7 +1136,13 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM)
 
-#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA)
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE)
+    adobe_widget = lv_img_create(canvas);
+    lv_img_set_src(adobe_widget, &adobe);
+    lv_obj_align(adobe_widget, LV_ALIGN_TOP_LEFT,
+                 CONFIG_NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE_CUSTOM_X,
+                 CONFIG_NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE_CUSTOM_Y);
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA)
     zmk_widget_luna_init(&luna_widget, canvas);
     lv_obj_align(zmk_widget_luna_obj(&luna_widget), LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_Y);
        // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA)

@@ -266,15 +266,15 @@ if NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE
 
 config NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE_CUSTOM_X
     int "Static Adobe logo X position"
-    default 0 if NICE_OLED_ON
+    default 64 if NICE_OLED_ON
     default 100 if NICE_EPAPER_ON
-    default 0
+    default 64
 
 config NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE_CUSTOM_Y
     int "Static Adobe logo Y position"
-    default 68 if NICE_OLED_ON
+    default -9 if NICE_OLED_ON
     default 8 if NICE_EPAPER_ON
-    default 68
+    default -9
 
 endif # NICE_OLED_WIDGET_CENTRAL_STATIC_IMAGE_ADOBE
 endif # NICE_OLED_WIDGET_WPM }}}

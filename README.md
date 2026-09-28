@@ -222,6 +222,8 @@ This document lists the available configuration options for the `nice_oled` shie
 | `CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS` | int | varies | Animation length in milliseconds |
 | `CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIM` | bool | `n` | Enable static vim on peripheral |
 | `CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIP_MARCOS` | bool | `n` | Enable static vim_marcos on peripheral |
+| `CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_ADOBE` | bool | `n` | Enable the static Adobe logo on peripheral |
+| `CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_PREMIERE` | bool | `n` | Enable the static Premiere logo on peripheral |
 | `CONFIG_NICE_OLED_WIDGET_PERIPHERAL` | bool | `n` | Enable test widget on peripheral |
 
 ## Central Specific

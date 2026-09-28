@@ -162,7 +162,15 @@ config NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIM
     default n
 
 config NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIP_MARCOS
-bool "Enable static vim_marcos on peripheral"
+    bool "Enable static vim_marcos on peripheral"
+    default n
+
+config NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_ADOBE
+    bool "Enable static Adobe logo on peripheral"
+    default n
+
+config NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_PREMIERE
+    bool "Enable static Premiere logo on peripheral"
     default n
 endif # NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL
 

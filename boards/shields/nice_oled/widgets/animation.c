@@ -62,6 +62,15 @@ LV_IMG_DECLARE(cat_7);
 
 const lv_img_dsc_t *cat_imgs[] = {&cat_0, &cat_1, &cat_2, &cat_3, &cat_4, &cat_5, &cat_6, &cat_7};
 
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_KM)
+#include "../assets/km_medal.h"
+
+const lv_img_dsc_t *km_medal_imgs[] = {
+    &km_medal_00, &km_medal_01, &km_medal_02, &km_medal_03, &km_medal_04, &km_medal_05,
+    &km_medal_06, &km_medal_07, &km_medal_08, &km_medal_09, &km_medal_10, &km_medal_11,
+    &km_medal_12, &km_medal_13, &km_medal_14, &km_medal_15,
+};
+
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
 
 LV_IMG_DECLARE(spaceman_00);
@@ -170,6 +179,10 @@ LV_IMG_DECLARE(adobe);
 LV_IMG_DECLARE(premiere);
 #define FIXED_IMAGE_PREMIERE &premiere
 
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_KM)
+#include "../assets/km_medal.h"
+#define FIXED_IMAGE_KM &km_medal_00
+
 #else
 
 LV_IMG_DECLARE(vim);
@@ -190,6 +203,8 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_animimg_set_src(art, (const void **)head_imgs, 16);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_KM)
+    lv_animimg_set_src(art, (const void **)km_medal_imgs, KM_MEDAL_NUM_IMAGES);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
     lv_animimg_set_src(art, (const void **)spaceman_imgs, 20);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_POKEMON)
@@ -212,6 +227,8 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_img_set_src(art, FIXED_IMAGE_ADOBE);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_PREMIERE)
     lv_img_set_src(art, FIXED_IMAGE_PREMIERE);
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_KM)
+    lv_img_set_src(art, FIXED_IMAGE_KM);
 #else
     int length = sizeof(crystal_imgs) / sizeof(crystal_imgs[0]);
     srand(k_uptime_get_32());
